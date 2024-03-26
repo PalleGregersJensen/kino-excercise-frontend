@@ -8,4 +8,4 @@ async function getAllCinemas() {
 }
 
 
-export { getAllCinemas };
+export { getAllCinemas, endpoint };

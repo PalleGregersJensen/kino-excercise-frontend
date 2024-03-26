@@ -1,35 +1,19 @@
-import { useEffect } from "react";
-import { getAllCinemas } from "./Rest-service/cinema";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Cinema from "./pages/Cinema";
+import Theater from "./pages/Theater";
 
 export default function App() {
-    const [cinemaData, setCinemaData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const cinemaData = await getAllCinemas();
-            console.log(cinemaData);
-            setCinemaData(cinemaData);
-        };
-        fetchData();
-    }, []);
-
     return (
-        <div>
-            <h1>Oversigt over biografer</h1>
-            <ul>
-                {cinemaData.map((cinema) => (
-                    <li key={cinema.id}>
-                        <h2>Biografnavn: {cinema.name}</h2>
-                        <p>
-                            Antal sale i {cinema.name}: {cinema.numberOfTheaters} sale
-                        </p>
-                        <p>
-                            Totalt antal pladser i {cinema.name}: {cinema.totalCapacity}
-                        </p>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        // <Router>
+        <Layout>
+            <Routes>
+                <Route path="/theater" element={<Theater />} />
+                <Route path="/cinema" element={<Cinema />} />
+                <Route path="/test" element={<h1>Test</h1>} />
+                <Route path="*" element={<h2>Not Found</h2>} />
+            </Routes>
+        </Layout>
+        // </Router>
     );
 }
