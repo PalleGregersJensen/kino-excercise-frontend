@@ -27,6 +27,9 @@ export default function Theater() {
                         <p>
                             Totalt antal pladser i {theater.name}: {theater.totalNumberOfSeats}
                         </p>
+                        <p>
+                            Denne sal findes i {theater.cinema.name}
+                        </p>
                     </li>
                 ))}
             </ul>
