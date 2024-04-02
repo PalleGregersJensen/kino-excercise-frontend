@@ -18,6 +18,9 @@ export default function NavHeader() {
                 <NavLink className="mb-0" to="/test">
                     Test
                 </NavLink>
+                <NavLink className="mb-0" to="/movieshow">
+                    Movie shows
+                </NavLink>
             </div>
         </nav>
     );

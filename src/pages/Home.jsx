@@ -26,7 +26,7 @@ export default function Home() {
                     <div key={movie.id}>
                         <p>{movie.title}</p>
                         <p>{movie.description}</p>
-                        <button onClick = {() => navigate("/theater")}>Vælg billetter til {movie.title}</button>
+                        <button onClick = {() => navigate("/movieshow")}>Vælg billetter til {movie.title}</button>
                     </div>
                 </>
             ))}
